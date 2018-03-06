@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://frosting-capstone-api.herokuapp.com/'
+    production: 'https://sleepy-chamber-80845.herokuapp.com',
     development: 'localhost:4741'
   }
 }
