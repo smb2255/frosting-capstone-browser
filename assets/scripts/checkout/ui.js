@@ -1,7 +1,8 @@
 'use strict'
 
-const store = require('./store')
-const historyTemplate = require('./templates/orderHistory.handlebars')
+const store = require('../store')
+
+// const historyTemplate = require('./templates/orderHistory.handlebars')
 
 const checkoutSuccess = function (data) {
   store.cart = data.cart
@@ -50,14 +51,14 @@ const cancelOrderFailure = function () {
   $('#cart-message').text('Error canceling order').css('color', 'red')
 }
 
-const getHistorySuccess = function (data) {
-  const historyHTML = historyTemplate({ carts: data.carts })
-  $('#order-history').html(historyHTML)
-}
+// const getHistorySuccess = function (data) {
+//   const historyHTML = historyTemplate({ carts: data.carts })
+//   $('#order-history').html(historyHTML)
+// }
 
-const getHistoryFailure = function () {
-  $('#history-message').text('Error retrieving order history').css('color', 'red')
-}
+// const getHistoryFailure = function () {
+//   $('#history-message').text('Error retrieving order history').css('color', 'red')
+// }
 
 module.exports = {
   checkoutSuccess,
@@ -65,7 +66,7 @@ module.exports = {
   updateOrderSuccess,
   updateOrderFailure,
   cancelOrderSuccess,
-  cancelOrderFailure,
-  getHistorySuccess,
-  getHistoryFailure
+  cancelOrderFailure
+  // getHistorySuccess,
+  // getHistoryFailure
 }

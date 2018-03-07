@@ -2,8 +2,8 @@
 
 const api = require('./api')
 const ui = require('./ui')
-const store = require('./store')
-const config = require('./config')
+const store = require('../store')
+const config = require('../config.js')
 
 const cartArray = []
 let stripeTotal = 0
@@ -55,7 +55,6 @@ const handler = StripeCheckout.configure({
 })
 
 const onShowModalActions = function (event) {
-  $('#order-history').html('')
   $('#history-message').html('')
   $('#cart-message').html('')
 }
