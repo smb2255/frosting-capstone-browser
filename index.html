@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Cloud Cream</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,89 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <nav class="navbar navbar-inverse sign">
-                <ul class="nav navbar-nav">
-                  <li id='cart-button' class="cart" data-toggle="modal" data-target="#cart">
-                    <a>Cart</a>
-                  </li>
-                  <li class="profile" style="display: none" data-toggle="modal" data-target="#profile">
-                    <a>Profile</a>
-                  </li>
-                  <li id='all-button' class="search">
-                    <a>All Products</a>
-                  </li>
-                  <li class="sign signout default-show" data-target="#log-in">
-                    <a id='login-button'>Log In</a>
-                  </li>
-                </ul>
-              </nav>
-            </header>
-
-            <div id='content' class="content">
-              <div id='products'>
-              </div>
-
-              <div id='checkout-page'>
-                <h1>THIS IS THE CHECKOUT PAGE</h1>
-              </div>
-
-            </div>
-            <!-- modals start here -->
-
-
-            <div class="modal-body">
-                      <div class="show-cart">
-                        <div class="row cart-row">
-                          <div class="col-md-3">
-                            <h5>Item</h5>
-                          </div>
-                          <div class="col-md-3">
-                            <h5>Price</h5>
-                          </div>
-                          <div class="col-md-3">
-                          <h5>Quantity</h5>
-                          </div>
-                          <div class="col-md-3">
-                            <h5>Remove</h5>
-                          </div>
-                          <br>
-                        </div>
-                        <div class="cart-items">
-            	          </div>
-                        <h3 class="no-items">Cart is Empty</h3>
-                	      <h5>Total: </h5>
-                        <!-- need to put stripe checkout link here -->
-                        <form action="your-server-side-code" method="POST">
-
-               <!-- data-amount will need to be dynamic with cart total -->
-               <script
-                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                 data-key="pk_test_UxDuOG7M2SZQLIDtrFMoZtRP"
-                 data-amount="100"
-                 data-name="Frosting"
-                 data-description="Your adventure just got yummier!"
-                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                 data-locale="auto">
-               </script>
-             </form>
-             <script src="#"></script>
-             <button style="display: none" type="button" class="btn btn-default create-order" id="save-order-button">Save for later</button>
-             <!-- <button style="display: none" type="button" class="btn btn-default checkout" id="checkout-button">Checkout</button> -->
-           </div>
-         </div>
-         </div>
-       </div>
-     </div>
-        <h3 class="sign-in-warn">Must be signed in to complete this order</h3>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-
-
-
-          </body>
-      </html>
+      <div id="content">
+        </div>
     </body>
 </html>

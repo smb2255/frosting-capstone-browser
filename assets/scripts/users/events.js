@@ -1,7 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const itemEvents = require('../items/events')
 const fillers = require('../fillers/events.js')
 // const store = require('../store')
 
@@ -11,7 +10,6 @@ const onSignInSubmit = function (event) {
   const data = getFormFields(event.target)
   api.signInUser(data)
     .then(ui.onSignInSuccess)
-    .then(itemEvents.onIndexItems)
     .catch(ui.onSignInFailure)
 }
 
