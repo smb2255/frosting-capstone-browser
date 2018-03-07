@@ -6,53 +6,6 @@ const store = require('../store')
 const config = require('../config.js')
 
 const cartArray = []
-let stripeTotal = 0
-
-const handler = StripeCheckout.configure({
-  key: 'pk_test_UxDuOG7M2SZQLIDtrFMoZtRP',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-  locale: 'auto',
-  // token is a callback that runs what ever functionality we need once Stripe has confirmed the credit card is valid, which Stripe sends back as a token object that represents the credit card. It takes a single arg, the credit card token object.
-  token: function (token) {
-    // this function below creates the credit card charge. It sends the entire CC token to our backend.
-    const ajaxTokenPost = function (theToken) {
-      // console.log(theToken)
-      return $.ajax({
-        url: config.apiOrigin + '/charge',
-        method: 'POST',
-        headers: {
-          Authorization: 'Token token=' + store.user.token
-        },
-        data: theToken
-      })
-    }
-
-    // These variables are used to build the cart object that is sent to the patch req
-    const qty = $('.cart-quant').val()
-    cartArray[0].quantity = qty
-    const price = cartArray[0].price.replace('$', '')
-    const data = {
-      cart: {
-        pastOrder: cartArray,
-        orderTotal: parseFloat(price) * cartArray[0].quantity * 100 // total in cents
-      }
-    }
-
-    // This .then chain is what needs to happen when card is confirmed. The order is updated with the contents of the cart. Then the charge request is sent. Then the update Order UI function is invoked.
-    api.updateOrder(data)
-      .then(() => {
-        ajaxTokenPost(token)
-      })
-      .then(() => {
-        // Uses cancelOrder UI function to clear the cart UI
-        ui.updateOrderSuccess()
-        // Success messaging here!
-        // console.log('Purchase success!')
-      })
-      .catch(() => { $('#cart-message').text('Card Declined').css('color', 'red') })
-  }
-
-})
 
 const onShowModalActions = function (event) {
   $('#history-message').html('')
