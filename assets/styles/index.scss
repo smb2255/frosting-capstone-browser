@@ -173,7 +173,7 @@ header .header-content .header-content-inner p {
 #signIn {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;
-  border-radius: 300px;
+  border-radius:900px;
   font-weight: 700;
   background-color: #F05F70;
   text-transform: uppercase;
@@ -189,7 +189,7 @@ header .header-content .header-content-inner p {
 .sign-in {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;
-  border-radius: 300px;
+  border-radius: 500px;
   font-weight: 700;
   background-color: #F05F70;
   text-transform: uppercase;
@@ -198,8 +198,24 @@ header .header-content .header-content-inner p {
 .sign-up {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;
-  border-radius: 300px;
+  border-radius: 500px;
   font-weight: 700;
   background-color: #F05F70;
   text-transform: uppercase;
+}
+#signInForm {
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
+#signUpForm {
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
+.sign-in-title {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+}
+.sign-up-title {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
 }
