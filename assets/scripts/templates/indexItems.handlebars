@@ -1,0 +1,12 @@
+<div id="cardsDisplay">
+  {{#each items as |item|}}
+    <div class="card" data-id="{{item._id}}">
+      <div class="card-body">
+        <h1 class="card-title">{{item.title}}</h1>
+        <h3 class="card-description">{{item.description}}</h3>
+          <button class="btn btn-warning" id="updateItemButton">Edit</button>
+          <button class="btn btn-danger" id="deletItemButton">Delete</button>
+      </div>
+    </div>
+  {{/each}}
+</div>
