@@ -7,7 +7,7 @@ const updateItemTemplate = require('../templates/updateItem.handlebars')
 
 const onCreateItemSubmit = function (event) {
   event.preventDefault()
-  fillers.onClearState()
+  // fillers.onClearState()
   const data = getFormFields(event.target)
   api.createItem(data)
     .then(onIndexItems)
@@ -16,6 +16,7 @@ const onCreateItemSubmit = function (event) {
 }
 
 const onIndexItems = function () {
+  event.preventDefault()
   fillers.onClearState()
   api.indexItems()
     .then(ui.onIndexItemsSuccess)
@@ -57,11 +58,11 @@ const onUpdateItemClick = function () {
 const userEventListeners = function () {
   $('#content').on('submit', '#createItemForm', onCreateItemSubmit)
   $('#content').on('click', '#indexItems', onIndexItems)
-  $('#content').on('submit', '.updateItemForm', onUpdateItemSubmit)
-  $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
-  $('#content').on('click', '#deletItemButton', onDeleteItemClick)
-  $('#content').on('click', '#updateItemButton', onUpdateItemClick)
-  $('#content').on('click', '#indexItemsFailButton', onIndexItems)
+  $('#user-content').on('submit', '.updateItemForm', onUpdateItemSubmit)
+  $('#user-content').on('submit', '#updateItemForm', onUpdateItemSubmit)
+  $('#user-content').on('click', '#deletItemButton', onDeleteItemClick)
+  $('#user-content').on('click', '#updateItemButton', onUpdateItemClick)
+  $('#user-content').on('click', '#indexItemsFailButton', onIndexItems)
 }
 
 module.exports = {

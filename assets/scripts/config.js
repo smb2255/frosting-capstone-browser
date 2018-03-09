@@ -3,7 +3,7 @@
 const config = {
   apiOrigins: {
     production: 'https://sleepy-chamber-80845.herokuapp.com',
-    development: 'localhost:4741'
+    development: 'http://localhost:4741'
   }
 }
 

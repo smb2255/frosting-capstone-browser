@@ -1,8 +1,9 @@
 const mainTemplate = require('../templates/main.handlebars')
 const signUpTemplate = require('../templates/signUp.handlebars')
 const signInTemplate = require('../templates/signIn.handlebars')
+const profileTemplate = require('../templates/profile.handlebars')
 const changePassTemplate = require('../templates/changePass.handlebars')
-const productsTemplate = require('../templates/products.handlebars')
+const createItemTemplate = require('../templates/createItem.handlebars')
 
 const onClearState = function () {
   $('#errorMessageProfile').html('')
@@ -29,23 +30,29 @@ const onChangePassLoad = function () {
   const changePassHTML = changePassTemplate()
   $('#changePassContainer').html(changePassHTML)
 }
-// onProductsLoad sends users to the page where they can view the products
-const onProductsLoad = function () {
-  const productsHTML = productsTemplate()
-  $('#content').html(productsHTML)
+
+const onProfileLoad = function () {
+  const profileHTML = profileTemplate()
+  $('#user-content').html(profileHTML)
+}
+
+const onCreateItemLoad = function () {
+  onClearState()
+  const createItemHTML = createItemTemplate()
+  $('#createItemContainer').html(createItemHTML)
 }
 
 const eventListeners = function () {
   $('#content').on('click', '#signIn', onSignInLoad)
   $('#content').on('click', '#signUp', onSignUpLoad)
   $('#content').on('click', '#changePass', onChangePassLoad)
-  $('#content').on('click', '#viewProducts', onProductsLoad)
+  $('#user-content').on('click', '#createItem', onCreateItemLoad)
 }
 
 module.exports = {
   onPageLoad,
+  onProfileLoad,
   eventListeners,
   onSignInLoad,
-  onClearState,
-  onProductsLoad
+  onClearState
 }
