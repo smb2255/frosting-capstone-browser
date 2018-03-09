@@ -7,7 +7,7 @@ const updateItemTemplate = require('../templates/updateItem.handlebars')
 
 const onCreateItemSubmit = function (event) {
   event.preventDefault()
-  // fillers.onClearState()
+  fillers.onClearState()
   const data = getFormFields(event.target)
   api.createItem(data)
     .then(onIndexItems)
